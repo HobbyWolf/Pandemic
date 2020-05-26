@@ -4,7 +4,7 @@ from Population import new_pops
 import os
 
 
-def plt_space(pops, ax1, day_count):
+def plt_space(pops, ax1):
     paths = []
     for peeps in pops:
         if peeps.symp == 0:
@@ -46,20 +46,17 @@ def pop_animation(life, master_pop, step_rat, iter_per_day, dis_par):
             break
         pops, daily_data = new_pops(master_pop, step_rat, dis_par)
 
-        # plt.subplot(2, 2, 1)
         total, active = daily_curves(daily_data, total, active)
         recovered.append(recovered[-1] + daily_data[1])
         ddead.append(ddead[-1] + daily_data[2])
+        plt_space(pops, ax[0][0])
 
-        # plt.subplot(2, 2, 2)
         ax[1][0].plot(np.linspace(0, i/iter_per_day, i+1), total, color='black')
         ax[1][0].set_title('Total Cases')
 
-        # plt.subplot(2, 2, 3)
         ax[0][1].plot(np.linspace(0, i / iter_per_day, i + 1), active, color='black')
         ax[0][1].set_title('Active Cases')
 
-        # plt.subplot(2, 2, 4)
         ax[1][1].plot(np.linspace(0, i / iter_per_day, i + 1), ddead, color='black')
         ax[1][1].set_title('Total Dead')
 
