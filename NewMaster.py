@@ -1,6 +1,5 @@
 from Population import init_loc
 from Plotter import *
-from DataStore import data_store
 
 
 def Master(pop_num, dist_pop, infected_people, nod, infec_prob, social_distancing):
@@ -35,8 +34,6 @@ def Master(pop_num, dist_pop, infected_people, nod, infec_prob, social_distancin
     # Initialize the population with random values
     master_pop = init_loc(pop_num, infected_people)
 
-    # pop_animation(nod, master_pop, step_rat, iter_per_day, dis_par)
-    # pop_data(nod, master_pop, step_rat, iter_per_day, dis_par)
-    data_store(nod, master_pop, step_rat, iter_per_day, dis_par)
+    pop_data(nod, master_pop, step_rat, iter_per_day, dis_par)
 
-    # plt.show()
+    plt.show()

@@ -16,7 +16,7 @@ class Pandemic(tkinter.Tk):
         self.pop_num = tkinter.StringVar()
         self.pop_entry = tkinter.Entry(self, textvariable=self.pop_num)
         self.pop_entry.grid(column=1, row=0, sticky='EW')
-        self.pop_num.set(u"100")
+        self.pop_num.set(u"50")
 
         self.dist = tkinter.Label(self, text='Enter max distance in km ')
         self.dist.grid(column=0, row=1, sticky='EW')
@@ -37,7 +37,7 @@ class Pandemic(tkinter.Tk):
         self.nod_pop = tkinter.StringVar()
         self.nod_entry = tkinter.Entry(self, textvariable=self.nod_pop)
         self.nod_entry.grid(column=1, row=3, sticky='EW')
-        self.nod_pop.set(u"300")
+        self.nod_pop.set(u"20")
 
         self.infecprob = tkinter.Label(self, text='Enter infective probability in % ')
         self.infecprob.grid(column=0, row=4, sticky='EW')

@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from Population import new_pops
-import os
+from DataStore import init_store
 
 
-def plt_space(pops, ax1, day_count):
+def plt_space(pops, ax1):
     paths = []
     for peeps in pops:
         if peeps.symp == 0:
@@ -34,6 +34,7 @@ def plt_space(pops, ax1, day_count):
         path.remove()
 
 
+# Currently not implemented
 def pop_animation(life, master_pop, step_rat, iter_per_day, dis_par):
 
     total = [dis_par[4]]
@@ -73,6 +74,7 @@ def pop_data(life, master_pop, step_rat, iter_per_day, dis_par):
     recovered = [0]
     ddead = [0]
     fig, ax = plt.subplots(2, 2)
+    file_h = init_store()
     for i in range(1, life * iter_per_day):
         if len(plt.get_fignums()) == 0:
             break
@@ -80,6 +82,10 @@ def pop_data(life, master_pop, step_rat, iter_per_day, dis_par):
         total, active = daily_curves(daily_data, total, active)
         recovered.append(recovered[-1] + daily_data[1])
         ddead.append(ddead[-1] + daily_data[2])
+
+        # Writing data to file
+        file_h.write(str(i / iter_per_day) + "\t" + str(total[-1]) + "\t" + str(active[-1]) + "\t" + str(
+            recovered[-1]) + "\t" + str(ddead[-1]) + "\n")
 
         ax[0][0].plot(np.linspace(0, i / iter_per_day, i + 1), total, color='Red')
         ax[0][0].set_title('Total Cases')
@@ -92,6 +98,8 @@ def pop_data(life, master_pop, step_rat, iter_per_day, dis_par):
 
         ax[1][1].plot(np.linspace(0, i / iter_per_day, i + 1), recovered, color='Green')
         ax[1][1].set_title('Total Recovered')
+
+        plt.pause(0.01)
 
         if active[-1] == 0:
             break

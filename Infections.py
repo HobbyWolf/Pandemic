@@ -1,6 +1,5 @@
 from random import random, randint
 from Space import peep_dist
-from numpy.random import randint as rint
 
 
 def update_infection(pops, dis_par):
@@ -41,15 +40,14 @@ def update_infection(pops, dis_par):
             #     limit = 4
             # else:
             #     limit = 1
-            infec_space = rint(0, len(pops)-1, int(0.2*len(pops)))
-            for j in infec_space:
-                if pops[j].symp == 0 and pops[j].reinfec == 0:
-                    x2 = pops[j].x
-                    y2 = pops[j].y
+            for peep2 in pops:
+                if peep2.symp == 0 and peep2.reinfec == 0:
+                    x2 = peep2.x
+                    y2 = peep2.y
                     if peep_dist(x1, y1, x2, y2) < thresh:
                         patients = patients + 1
-                        pops[j].symp = randint(1, 2)
-                        pops[j].reinfec = 1
+                        peep2.symp = randint(1, 2)
+                        peep2.reinfec = 1
         if peeps.symp == 3:
             peeps.deadrec = peeps.deadrec - 1/int_per_day
             if peeps.deadrec <= 0:
