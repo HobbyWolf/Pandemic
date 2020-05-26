@@ -1,9 +1,6 @@
 import cv2
 import os
 
-# Construct the argument parser and parse the arguments
-# Arguments
-
 
 def image_ani(nod):
     dir_path = os.getcwd()+'/TLol'
@@ -11,9 +8,6 @@ def image_ani(nod):
     output = 'output.mp4'
 
     images = []
-    # for f in os.listdir(dir_path):
-    #     if f.endswith(ext):
-    #         images.append(f)
 
     for i in range(1, 601):
         images.append('Fig_'+str(i)+'.png')

@@ -28,19 +28,3 @@ def daily_curves(daily_data, total, active):
     total.append(total[-1] + daily_data[0])
     active.append(active[-1] + daily_data[0] - daily_data[1] - daily_data[2])
     return total, active
-
-#           try:
-#             global photo
-#             global frame
-#             global label
-#             photo = PhotoImage(
-#                 file = photo_path,
-#                 format = "gif - {}".format(frame)
-#                 )
-#
-#             label.configure(image = nextframe)
-#
-#             frame = frame + 1
-#
-#         except Exception:
-#             frame = 1

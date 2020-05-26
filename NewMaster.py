@@ -3,10 +3,6 @@ from Plotter import *
 from DataStore import data_store
 
 
-# 0 - x; 1 - y; 2 - -ve/asym/sym; 3 - mvmt dir; 4 - incubation; 5 - dead/recov; 6 - reinfection; 7 - quarantine
-# 8 - central loc
-
-
 def Master(pop_num, dist_pop, infected_people, nod, infec_prob, social_distancing):
     # Population parameters
     pop_num = int(pop_num)

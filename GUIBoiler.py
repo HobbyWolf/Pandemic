@@ -73,18 +73,3 @@ if __name__ == "__main__":
     app = Pandemic(None)
     app.title('Pandemic')
     app.mainloop()
-
-
-##########################################
-## Trash code ##
-
-# self.entryVariable = tkinter.StringVar()
-# self.entry = tkinter.Entry(self, textvariable=self.entryVariable)
-# self.entry.grid(column=1, row=0, sticky='EW')
-# self.entry.bind("<Return>", self.OnPressEnter)
-# self.entryVariable.set(u"Enter text here.")
-
-# def OnPressEnter(self, event):
-#     self.labelVariable.set(self.entryVariable.get()+" (You pressed ENTER)")
-#     self.entry.focus_set()
-#     self.entry.selection_range(0, tkinter.END)

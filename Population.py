@@ -4,8 +4,6 @@ from Infections import update_infection
 from Randomizer import get_angle
 from numpy.random import randint as rint
 import sys
-# 0 - x; 1 - y; 2 - -ve/asym/sym; 3 - mvmt dir; 4 - incubation; 5 - dead/recov; 6 - reinfection; 7 - quarantine
-# 8 - central loc
 
 
 class People:

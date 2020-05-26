@@ -2,9 +2,6 @@ from random import random, randint
 from Space import peep_dist
 from numpy.random import randint as rint
 
-# 0 - x; 1 - y; 2 - -ve/asym/sym/sym&quarantine; 3 - mvmt dir; 4 - incubation;
-# 5 - dead/recov; 6 - reinfection; 7 - quarantine
-
 
 def update_infection(pops, dis_par):
     dead = 0
