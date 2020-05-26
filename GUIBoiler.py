@@ -53,12 +53,6 @@ class Pandemic(tkinter.Tk):
         self.socialdis_entry.grid(column=1, row=5, sticky='EW')
         self.socialdis_pop.set(u"0")
 
-        # self.rando = tkinter.Label(self, text='No.of days ')
-        # self.rando.grid(column=0, row=1, sticky='EW')
-        # self.rando_pop = tkinter.StringVar()
-        # self.rando_entry = tkinter.Entry(self, textvariable=self.rando_pop)
-        # self.rando_entry.grid(column=1, row=1, sticky='EW')
-        # self.rando_pop.set(u"1")
 
         self.button = tkinter.Button(self, text=u"Let's Go",
                                 command=self.OnButtonClick)
