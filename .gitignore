@@ -3,3 +3,4 @@ Issues.txt
 __pycache__/*
 venv/*
 .idea/*
+Data/*
